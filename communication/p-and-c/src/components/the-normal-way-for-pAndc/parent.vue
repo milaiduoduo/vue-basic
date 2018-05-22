@@ -1,14 +1,13 @@
 <template>
   <div>
-    <h3>父组件使用v-model语法糖，而不再需要手写对子组件的监听。</h3>
-    <h3>'<'my-component v-model='total''><'my-component'>'</h3>
+    <h3>用普通方法，实现之前v-Model绑定的实现方式。</h3>
     <hr>
     <p>总数：{{total}}</p>
-    <my-component v-model="total"></my-component>
+    <my-component @input="handleGetTotal"></my-component>
   </div>
 </template>
 <script type='text/ecmascript-6'>
-  import myComponent from './child.vue';
+  import myComponent from './child.vue'
   export default{
     data(){
       return {
@@ -17,6 +16,11 @@
     },
     components: {
       myComponent
+    },
+    methods: {
+      handleGetTotal(childNum){
+        this.total = childNum;
+      }
     }
   }
 </script>
