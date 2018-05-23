@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--# 如果想显示{{  }}标签，而不进行替换，使用v-pre即可调过这个元素和它的子元素的编译过程 #-->
+    <div>1.<span v-pre>{{&lt;div&gt;这里的内容不会被编译}}</span></div>
+    <div>2.<span v-pre>{{<div>这里的div标签已经被解析了！说明v-pre里面放的html标签是会被解析的！</div>}}</span></div>
+    <div>3.<span v-html="link"></span></div>
+    <div>4.<span v-text="link"></span></div>
+    <div>5.{{link}}</div>
+</div>
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            link:'<a href="#">这是一个连接</a>'
+        }
+    })
+</script>
