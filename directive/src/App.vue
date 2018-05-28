@@ -2,9 +2,9 @@
   <div>
     <h2>一、第一部分是全局注册的v-focus指令！对同一页面中的input[type=text]只会focus最后一个！</h2>
     <template>
-      <!--<input type="text" v-focus value="1">-->
-      <!--<input type="text" v-focus value="2">-->
-      <!--<input type="text" v-focus value="3">-->
+      <input type="text" v-focus value="1">
+      <input type="text" v-focus value="2">
+      <input type="text" v-focus value="3">
     </template>
       <other pvalue="1"></other>
       <other pvalue="2"></other>

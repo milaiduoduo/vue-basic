@@ -9,11 +9,11 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 
 // 全局注册 directive
-// Vue.directive('focus', {
-//   inserted: function (el) {
-//     el.focus();
-//   }
-// })
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus();
+  }
+})
 
 new Vue({
   el: '#app',
