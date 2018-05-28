@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dv {
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div ref="dv1" class="dv"></div>
+    <hr>
+    <p>dom.toString() is:</p>
+    <div v-text="msg"></div>
+    <hr>
+    <div>v-text msgDom:<div v-text="msgDom"></div></div>
+    <hr>
+    <div>v-html msgDom:<div v-html="msgDom"></div></div>
+
+</div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            msg:'',
+            msgDom:''
+        },
+        mounted(){
+            let dv1Dom = this.$refs.dv1;
+            this.msgDom = dv1Dom;
+            let dv1Str = this.$refs.dv1.toString();
+            this.msg = dv1Str;
+            console.log('dom is:',dv1Dom);
+            console.log(dv1Str);
+            dv1Dom.style.backgroundColor = 'red';
+
+        }
+    })
+</script>
+</html>
