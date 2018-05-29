@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5中，让input text在页面加载时就获取焦点。</title>
+</head>
+<body>
+<h3>html5中，使用autofocus="autofocus"属性，就可以让input获取焦点</h3>
+1.<input type="text" autofocus="autofocus" >
+2.<input type="text" autofocus="autofocus" >
+<hr>
+<h3>html4中，需要在js中调用focus()方法来获取焦点。</h3>
+<input type="text" id="input1">
+<input type="text" id="input2">
+<hr>
+<h3>但无论是那种获取焦点方法，页面上被聚焦的input只有一个！</h3>
+<h4>在directive文件夹中，还有自定义指令的v-focus写法。</h4>
+</body>
+<script>
+  document.getElementById('input1').focus();
+  document.getElementById('input1').focus();
+</script>
+</html>
