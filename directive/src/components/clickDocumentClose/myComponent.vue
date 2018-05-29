@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>四、【点击document关闭列表区域】</h1>
+  <div style="background: #b2b5ff">
+    <h1>[v-clickoutside.esc]【点击document或按钮esc关闭列表区域】</h1>
     <div class="wrap" v-clickoutside.esc="handleClose">
       <button @click="show=!show">open</button>
       <ul class="dropdown" v-show="show">
