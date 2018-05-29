@@ -35,16 +35,5 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-  .link {
-    padding: 5px 20px;
-    font-size: 20px;
-    height: 40px;
-    line-height: 40px;
-    display: inline-block;
-    cursor: pointer;
-    border:1px solid #42818B;
-    &:hover {
-      background: darkblue;
-    }
-  }
+
 </style>
