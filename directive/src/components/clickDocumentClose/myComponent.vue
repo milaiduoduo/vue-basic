@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>四、【点击document关闭列表区域】</h1>
-    <div class="wrap" v-clickoutside="handleClose">
+    <div class="wrap" v-clickoutside.esc="handleClose">
       <button @click="show=!show">open</button>
       <ul class="dropdown" v-show="show">
         <li>node.js</li>
@@ -33,10 +33,14 @@
           }
 
           function keyupHandler(e) {
-            if (e.keyCode == 27) {
-              if (binding.expression) {
-                console.log('in binding.express');
-                binding.value(e)
+            if (binding.expression) {
+              let paramObj = binding.modifiers;
+              console.log('paramObj:', paramObj)
+              if (paramObj) {
+                if (paramObj.esc && e.keyCode == 27) {
+                  console.log('esc!!!');
+                  binding.value(e)
+                }
               }
             }
           }
