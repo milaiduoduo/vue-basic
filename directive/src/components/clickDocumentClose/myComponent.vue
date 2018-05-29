@@ -32,12 +32,25 @@
             }
           }
 
+          function keyupHandler(e) {
+            if (e.keyCode == 27) {
+              if (binding.expression) {
+                console.log('in binding.express');
+                binding.value(e)
+              }
+            }
+          }
+
           el.__vueClickOutside__ = documentHandler;
+          el.__vueClickESC__ = keyupHandler;
           document.addEventListener('click', documentHandler);
+          document.addEventListener('keyup', keyupHandler);
         },
         unbind: function (el, binding) {
           document.removeEventListener('click', el.__vueClickOutside__);
+          document.removeEventListener('keyup', el.__vueClickESC__);
           delete el.__vueClickOutside__;
+          delete el.__vueClickESC__;
         }
       }
     },
