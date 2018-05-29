@@ -1,23 +1,35 @@
 <template>
   <div>
-    <input type="text" ref="input1">
+    <input type="text" ref="input1" :value="msg">
+    <div>{{msg}}</div>
+    <div id="vt" style="background: deeppink"></div>
+    <div v-html="domStr" style="background:blue;"></div>
+    <div>{{domStr}}</div>
   </div>
 </template>
 
 <script>
-  $(function(){
-      alert(1);
-  })
   export default {
     name: 'HelloWorld',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        domStr: '12',
+        msg: 'i am a text input.'
       }
     },
+    created(){
+      console.log('created:', this.$el);
+      console.log('created:', this.msg);
+      console.log('created:', this.$refs.input1);
+    },
     mounted(){
-//      let val = $(this.$refs.input1).val;
-//      console.log(val);
+      let val = $(this.$refs.input1)[0];
+      this.domStr = val;
+      $('#vt').html(this.domStr)
+//      console.log('mounted:', this.$el);
+//      console.log('mounted:', this.msg);
+//      console.log('mounted:', this.$refs.input1);
+      console.log(this.domStr);
     }
   }
 </script>
