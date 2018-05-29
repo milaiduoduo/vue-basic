@@ -20,9 +20,9 @@
 </template>
 
 <script>
-  import focusInput from '@/components/focusInput';
-  import other from '@/components/other';
-  import nodirect from '@/components/noDirective';
+  import focusInput from '@/components/kindOfInputFocus/focusInput';
+  import other from '@/components/kindOfInputFocus/other';
+  import nodirect from '@/components/kindOfInputFocus/noDirective';
   export default {
     name: 'App',
     components: {
