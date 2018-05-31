@@ -16,11 +16,17 @@
     components: {
       Counter
     },
-    created(){
-      this.$bus.on('add', num => {
+    methods: {
+      handleAddRadom(num){
         console.log('parent num:', num);
         this.number += num;
-      })
+      }
+    },
+    created(){
+      this.$bus.on('add', this.handleAddRadom)
+    },
+    beforeDestory(){
+      this.$bus.off('add', this.handleAddRadom)
     }
   }
 </script>
