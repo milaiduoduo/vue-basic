@@ -2,11 +2,11 @@
   <div style="border:1px solid blue;">
     <p>我是index.vue,我调用了Counter组件，随机增加的数目为：</p>
     {{number}}
-    <Counter></Counter>
+    <Child></Child>
   </div>
 </template>
 <script type='text/ecmascript-6'>
-  import Counter from './Counter.vue';
+  import Child from './child.vue';
   export default{
     data(){
       return {
@@ -14,7 +14,7 @@
       }
     },
     components: {
-      Counter
+      Child
     },
     methods: {
       handleAddRadom(num){
@@ -24,9 +24,10 @@
     },
     created(){
       this.$bus.on('add', this.handleAddRadom)
+      //this.number += this.$bus.num;
     },
     beforeDestory(){
-      this.$bus.off('add', this.handleAddRadom)
+       this.$bus.off('add', this.handleAddRadom)
     }
   }
 </script>
