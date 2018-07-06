@@ -10,6 +10,11 @@ export default {
     console.log("2.2 組件級別，Business里！！");
     console.log("to,from:", to, from);
     next();
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log("2.2 組件級別Update，Business里！！");
+    console.log("to,from:", to, from);
+    next();
   }
 };
 </script>

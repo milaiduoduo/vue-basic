@@ -8,7 +8,12 @@
 <script>
 export default {
   beforeRouteEnter(to, from, next) {
-    console.log("2. 組件級別，HelloWorld里！！");
+    console.log("2. 組件級別Enter，HelloWorld里！！");
+    console.log("to,from:", to, from);
+    next();
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log("2. 組件級別Update，HelloWorld里！！");
     console.log("to,from:", to, from);
     next();
   }
