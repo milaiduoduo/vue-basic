@@ -15,6 +15,12 @@ export default {
     console.log("2.2 組件級別Update，Business里！！");
     console.log("to,from:", to, from);
     next();
+  },
+  created() {
+    console.log("生命週期created,子路由business");
+  },
+  mounted() {
+    console.log("生命週期mounted,子路由business");
   }
 };
 </script>
